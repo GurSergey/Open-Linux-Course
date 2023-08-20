@@ -1,0 +1,5 @@
+
+#ifndef LINUX_TASK_CHECKER_MAIN_BLACKJACK_H
+#define LINUX_TASK_CHECKER_MAIN_BLACKJACK_H
+int main_blackjack(int argc, char *argv[]);
+#endif //LINUX_TASK_CHECKER_MAIN_BLACKJACK_H

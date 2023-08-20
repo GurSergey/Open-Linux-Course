@@ -1,0 +1,5 @@
+
+#ifndef LINUX_TASK_CHECKER_MAIN_SNAKE_H
+#define LINUX_TASK_CHECKER_MAIN_SNAKE_H
+void main_snake(void);
+#endif //LINUX_TASK_CHECKER_MAIN_SNAKE_H

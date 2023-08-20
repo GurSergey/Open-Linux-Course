@@ -1,0 +1,5 @@
+
+#ifndef LINUX_TASK_CHECKER_TETRIS_H
+#define LINUX_TASK_CHECKER_TETRIS_H
+int main_tetris(void);
+#endif //LINUX_TASK_CHECKER_TETRIS_H
