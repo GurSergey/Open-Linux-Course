@@ -6,7 +6,7 @@
 #include "tictactoe.h"
 #include "main_blackjack.h"
 #include "minisweeper.h"
-//#include "tetris.h"
+#include "tetris.h"
 #include "main_snake.h"
 
 void run_easter() {
@@ -53,7 +53,7 @@ void run_easter() {
 //            main_minisweeper();
 //            break;
         case 1970:
-//            main_tetris();
+            main_tetris();
             break;
         case 42:
             main_snake();
