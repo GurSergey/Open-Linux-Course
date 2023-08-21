@@ -19,10 +19,6 @@ const struct Task zero = {
         {"Linux\n", "1.txt\n", "OK\n"},
         // prompts for task
         {"Your OS is not Linux", "File 1.txt is not found in your folder", "Your file must contain Hello world!" },
-        // secret strings
-        "111",
-        //
-        CONFIG_ZERO_TASK_SCORE,
         //
         CONFIG_ZERO_TASK
 };

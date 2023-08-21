@@ -12,8 +12,6 @@
     char* commands[MAX_COMMANDS];
     char* right_answer[MAX_COMMANDS];
     char* prompt[MAX_COMMANDS];
-    char* secret_words;
-    char* score;
     char* task_id;
 } ;
 

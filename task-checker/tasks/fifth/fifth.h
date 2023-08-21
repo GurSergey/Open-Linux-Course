@@ -42,10 +42,6 @@ const struct Task fifth = {
             "Fourth line of your output has mistakes (Disk info). Check decision\n",
             "Fifth line of your output has mistakes (Uptime info). Check decision\n"
          },
-        // secret strings
-        "111",
-        //
-        CONFIG_FIFTH_TASK_SCORE,
         //
         CONFIG_FIFTH_TASK
 };

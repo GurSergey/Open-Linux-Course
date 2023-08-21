@@ -37,10 +37,6 @@ const struct Task eighth = {
             "Wrong answer, test 5 failed\n"
 
          },
-        // secret strings
-        "111",
-        //
-        CONFIG_EIGHTH_TASK_SCORE,
         //
         CONFIG_EIGHTH_TASK
 };

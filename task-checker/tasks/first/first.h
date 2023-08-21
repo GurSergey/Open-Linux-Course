@@ -36,10 +36,6 @@ const struct Task first = {
          "Not found file3\n",
          "Not found file4\n",
         "Not found dir3\n"},
-        // secret strings
-        "111",
-        //
-        CONFIG_FIRST_TASK_SCORE,
         //
         CONFIG_FIRST_TASK
 };

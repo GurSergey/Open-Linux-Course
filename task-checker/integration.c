@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <curl/curl.h>
 #include "config.h"
-#include "integration_openolat.h"
+#include "integration.h"
 
 
-int setInMarkInLms(char* task_num, char* score_task) {
+int setInMarkInLms(char* task_num) {
     CURL *curl;
     CURLcode res;
     int status = -1;
@@ -25,17 +25,13 @@ int setInMarkInLms(char* task_num, char* score_task) {
         curl_easy_setopt(curl, CURLOPT_URL, buf_url);
         char json_buffer[100];
 //        printf("%s \n", json_buffer);
-        sprintf(json_buffer, "{ \"identityKey\":%s, \n \"score\":%s, \n \"passed\": true }", CONFIG_USER_ID, score_task);
+        sprintf(json_buffer, "{ \"identityKey\":%s, \n \"score\": true, \n \"passed\": true }", CONFIG_USER_ID);
         /* Now specify the POST data */
         struct curl_slist *headers = NULL;
         headers = curl_slist_append(headers, "Content-Type: application/json");
         headers = curl_slist_append(headers, "charset: utf-8");
         curl_slist_append(headers, "Accept: */*");
-//        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "name=daniel&project=curl");
         curl_easy_setopt(curl, CURLOPT_HTTPPOST, 1);
-        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
-        curl_easy_setopt(curl, CURLOPT_USERNAME, CONFIG_LOGIN_ROBOT);
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, CONFIG_PASS_ROBOT);
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_buffer);
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         /* Perform the request, res will get the return code */

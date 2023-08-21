@@ -9,7 +9,7 @@
 #include "config.h"
 #include "debug_info.h"
 #include "tasks/easter/easter_main.h"
-#include "integration_openolat.h"
+#include "integration.h"
 
 char* execute_command(char* command) {
     FILE *fp;
@@ -86,7 +86,7 @@ int main() {
             printf("%s", tux_buffer);
             if (strtol(CONFIG_WITH_LMS_CHECKING, NULL, 10) == 1) {
                 printf("\nPlease wait, your mark setting on LMS...\n");
-                if(setInMarkInLms(tasks[num].task_id, tasks[num].score) == LMS_OK_STATUS) {
+                if(setInMarkInLms(tasks[num].task_id) == LMS_OK_STATUS) {
                     printf("\nYour mark successfully set on LMS!\n");
                 } else {
                     printf("\nSomething went wrong. Your mark is not set on LMS. Please, try again"

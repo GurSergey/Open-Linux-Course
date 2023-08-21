@@ -55,10 +55,6 @@ const struct Task ninth = {
             "Wrong decision, some problems with tunnel on localhost:8082. Please, check this url in web-browse \n", // 11
             "Wrong decision, some problems with web app on localhost:8080. Please, check ssh tunnel for db and/or url in web-browser\n" // 12
          },
-        // secret strings
-        "111",
-        //
-        CONFIG_NINTH_TASK_SCORE,
         //
         CONFIG_NINTH_TASK
 };

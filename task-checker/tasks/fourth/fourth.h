@@ -76,10 +76,6 @@ const struct Task fourth = {
          "Niceness of sleep 36000 not equal 12\n", // 15
          "Niceness of sleep 18000 not equal 12\n", // 16
          },
-        // secret strings
-        "111",
-        //
-        CONFIG_FOURTH_TASK_SCORE,
         //
         CONFIG_FOURTH_TASK
 };

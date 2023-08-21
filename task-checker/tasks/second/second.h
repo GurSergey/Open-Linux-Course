@@ -39,10 +39,6 @@ const struct Task second = {
          "Wrong answer in file renew.txt. Check you decision\n",
          "incorrect contents of the logs1 folder. Check, maybe, you copied unnecessary or did not copy the necessary files\n"
          },
-        // secret strings
-        "111",
-        //
-        CONFIG_SECOND_TASK_SCORE,
         //
         CONFIG_SECOND_TASK
 };

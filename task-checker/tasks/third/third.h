@@ -66,10 +66,6 @@ const struct Task third = {
          "Group new_group is not owner of directory testdir\n",
          "Wrong access settings for directory testdir. Check your decision \n"
          },
-        // secret strings
-        "111",
-        //
-        CONFIG_THIRD_TASK_SCORE,
         //
         CONFIG_THIRD_TASK
 };
