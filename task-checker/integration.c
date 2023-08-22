@@ -20,12 +20,11 @@ int setInMarkInLms(char* task_num) {
            just as well be a https:// URL if that is what should receive the
            data. */
         char buf_url[150];
-        sprintf(buf_url,"%s/restapi/repo/courses/%s/assessments/%s", CONFIG_BASE_URL,
-               CONFIG_COURSE_ID, task_num);
+        sprintf(buf_url,"%s/api/grade/", CONFIG_BASE_URL);
         curl_easy_setopt(curl, CURLOPT_URL, buf_url);
-        char json_buffer[100];
+        char json_buffer[200];
 //        printf("%s \n", json_buffer);
-        sprintf(json_buffer, "{ \"identityKey\":%s, \n \"score\": true, \n \"passed\": true }", CONFIG_USER_ID);
+        sprintf(json_buffer, "{ \"passCode\":\"%s\", \n \"number\": \"%s\" }", CONFIG_PASS_CODE, task_num);
         /* Now specify the POST data */
         struct curl_slist *headers = NULL;
         headers = curl_slist_append(headers, "Content-Type: application/json");

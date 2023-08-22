@@ -20,7 +20,7 @@ from django.views.generic import TemplateView
 
 from django.contrib.auth import views
 
-from app.views import compile_utility
+from app.views import get_utility, send_grade
 
 admin.site.site_header = "WebUI helper admin"
 admin.site.site_title = "WebUI helper admin site"
@@ -38,5 +38,6 @@ urlpatterns = [
         views.PasswordChangeDoneView.as_view(),
         name="password_change_done",
     ),
-    path("compile/", compile_utility)
+    path("utility/", get_utility),
+    path("api/grade/", send_grade)
 ]

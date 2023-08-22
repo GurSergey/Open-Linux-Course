@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+from collections import OrderedDict
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -150,21 +150,22 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CONSTANCE_CONFIG = {
-    'CANVAS_LMS_URL': ('', 'Canvas base URL'),
-    'ADMIN_TOKEN': ('', 'Course admin token'),
-    'COURSE_ID': ('', 'Course id in LMS'),
-    'ZERO_TASK_ID': ('', 'Zero task id'),
-    'FIRST_TASK_ID': ('', 'First task id'),
-    'SECOND_TASK_ID': ('', 'Second task id'),
-    'THIRD_TASK_ID': ('', 'Third task id'),
-    'FOURTH_TASK_ID': ('', 'Fourth task id'),
-    'FIFTH_TASK_ID': ('', 'Fifth task id'),
-    'SIXTH_TASK_ID': ('', 'Sixth task id'),
-    'SEVENTH_TASK_ID': ('', 'Seventh task id'),
-    'EIGHT_TASK_ID': ('', 'Eight task id'),
-    'NINE_TASK_ID': ('', 'Nine task id'),
-}
+CONSTANCE_CONFIG = OrderedDict([
+    ('HELPER_URL', ('', 'Canvas base URL')),
+    ('CANVAS_LMS_URL', ('', 'Canvas base URL')),
+    ('ADMIN_TOKEN', ('', 'Course admin token')),
+    ('COURSE_ID', ('', 'Course id in LMS')),
+    ('ZERO_TASK_ID', ('', 'Zero task id')),
+    ('FIRST_TASK_ID', ('', 'First task id')),
+    ('SECOND_TASK_ID', ('', 'Second task id')),
+    ('THIRD_TASK_ID', ('', 'Third task id')),
+    ('FOURTH_TASK_ID', ('', 'Fourth task id')),
+    ('FIFTH_TASK_ID', ('', 'Fifth task id')),
+    ('SIXTH_TASK_ID', ('', 'Sixth task id')),
+    ('SEVENTH_TASK_ID', ('', 'Seventh task id')),
+    ('EIGHT_TASK_ID', ('', 'Eight task id')),
+    ('NINE_TASK_ID', ('', 'Nine task id')),
+])
 
 # CONSTANCE_CONFIG_FIELDSETS = {
 #     'Canvas settings': {'fields':('CANVAS_LMS_URL')},
