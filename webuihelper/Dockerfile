@@ -8,6 +8,7 @@ COPY ./webuihelper /webuihelper/webuihelper
 COPY ./manage.py /webuihelper
 COPY ./requirements.txt /webuihelper
 COPY ./start.sh /webuihelper
+RUN chmod 755 /webuihelper/start.sh
 COPY ./task-checker /task-checker
 RUN apt update
 RUN apt install -y build-essential libcurl4-openssl-dev libncurses-dev libncurses5-dev libncursesw5-dev

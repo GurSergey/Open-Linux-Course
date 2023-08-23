@@ -3,7 +3,6 @@ version: "3.9"
 services:
   web:
     build: .
-    command: python /webuihelper/manage.py runserver 0.0.0.0:8000
     volumes:
       - ./compiled:/compiled
     ports:
@@ -11,17 +10,17 @@ services:
     depends_on:
       - db
     environment:
-      - DJANGO_SUPERUSER_PASSWORD = 123456789abc
-      - DJANGO_SUPERUSER_USERNAME = admin
-      - DJANGO_SUPERUSER_EMAIL = test@mail.com
-      - CHECKER_SOURCE_PATH=/task-checker
-      - COMPILED_CHECKERS_PATH=/compiled
-      - DB_HOST=db
-      - DB_NAME=uihelper
-      - DB_PASSWORD=secret
-      - DB_PORT=5432
-      - DB_USER=admin
-      - DJANGO_SETTINGS_MODULE=webuihelper.settings
+      DJANGO_SUPERUSER_PASSWORD: 123456789abc
+      DJANGO_SUPERUSER_USERNAME: admin
+      DJANGO_SUPERUSER_EMAIL: test@mail.com
+      CHECKER_SOURCE_PATH: /task-checker
+      COMPILED_CHECKERS_PATH: /compiled
+      DB_HOST: db
+      DB_NAME: uihelper
+      DB_PASSWORD: secret
+      DB_PORT: 5432
+      DB_USER: admin
+      DJANGO_SETTINGS_MODULE: webuihelper.settings
   db:
     image: postgres:13
     volumes:
