@@ -12,11 +12,30 @@ Vagrant.configure("2") do |config|
 #   config.vm.network "forwarded_port", guest: 22, host: 2221
 
   config.vm.provision "shell", inline: <<-SHELL
-    echo "course" | sudo passwd --stdin "course"
-#     sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
     systemctl restart sshd.service
     apt-get update
     apt-get install -y php postgresql postgresql-contrib
+    mkdir /php_script
+    useradd -m "course" -p "course" > /dev/null 2>&1
+    echo "course:course" | sudo chpasswd
+  SHELL
+
+  config.vm.provision "file", source: "test.txt", destination: "/tmp/test.txt"
+  config.vm.provision "file", source: "secret", destination: "/tmp/secret"
+  config.vm.provision "file", source: "index.php", destination: "/tmp/index.php"
+  config.vm.provision "file", source: "image.jpg", destination: "/tmp/image.jpg"
+  config.vm.provision "file", source: "migrations.sql", destination: "/tmp/migrations.sql"
+  config.vm.provision "shell", inline: <<-SHELL
+    mv /tmp/test.txt /home/course
+    mv /tmp/secret /home/course
+    mv /tmp/image.jpg /home/course
+    mv /tmp/index.php /php_script/index.php
+    chmod 775 /home/course/secret
+    cd /php_script
+    php -S 0.0.0.0:8001 &
+    sudo -u postgres psql -c "CREATE USER petclinic WITH PASSWORD 'petclinic';"
+    sudo -u postgres psql -c "CREATE DATABASE petclinic WITH OWNER petclinic;"
+    sudo -u postgres psql -d petclinic -a -f /tmp/migrations.sql
   SHELL
 
 end
