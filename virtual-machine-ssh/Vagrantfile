@@ -36,6 +36,8 @@ Vagrant.configure("2") do |config|
     sudo -u postgres psql -c "CREATE USER petclinic WITH PASSWORD 'petclinic';"
     sudo -u postgres psql -c "CREATE DATABASE petclinic WITH OWNER petclinic;"
     sudo -u postgres psql -d petclinic -a -f /tmp/migrations.sql
+    sudo -u postgres psql -d petclinic -c "GRANT SELECT ON ALL TABLES IN SCHEMA public TO petclinic;"
+
   SHELL
 
 end
