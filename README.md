@@ -1,1 +1,1 @@
-# Linux-Course-with-automatic-check
+# Open Linux Course
